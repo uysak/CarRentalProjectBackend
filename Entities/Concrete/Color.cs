@@ -9,11 +9,6 @@ namespace Entities.Concrete
 {
     public class Color : IEntity
     {
-        public Color(int colorId, string colorName)
-        {
-            this.colorId = colorId;
-            this.colorName = colorName;
-        }
 
         public int colorId { get; set; }
         public string colorName { get; set; }

@@ -10,17 +10,8 @@ namespace Entities.Concrete
 
     public class Car : IEntity
     {
-        public Car(int carId, int brandId, int colorId, short modelYear, decimal dailyPrice, string description)
-        {
-            this.carId = carId;
-            BrandId = brandId;
-            ColorId = colorId;
-            ModelYear = modelYear;
-            DailyPrice = dailyPrice;
-            Description = description;
-        }
 
-        public int carId { get; set; }
+        public int CarId { get; set; }
         public int BrandId { get; set; }
         public int ColorId { get; set; }
         public short ModelYear { get; set; }
