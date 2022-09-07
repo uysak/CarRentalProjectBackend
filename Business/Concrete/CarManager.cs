@@ -6,39 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
+using Business.Concrete;
+using Core.DataAccess.EntityFramework;
 namespace Business.Concrete
 {
-    public class CarManager : ICarService
+    public class CarManager : EfEntityManagerRepository<Car, ICarDal>, ICarService
     {
+
         ICarDal _carDal;
         public CarManager(ICarDal carDal)
         {
             _carDal = carDal;
         }
-     
-        public void Add(Car car)
-        {
-            _carDal.Add(car);
-        }
 
-        public void Delete(Car car)
-        {
-            _carDal.Delete(car);
-        }
-
-        public List<Car> GetAll()
-        {
-            return _carDal.GetAll();
-        }
-
-        public Car GetById(int id)
+        public Car GetCarById(int id)
         {
             return _carDal.Get(c => c.CarId == id);
-        }
-
-        public void Update(Car car)
-        {
-            _carDal.Update(car);
         }
     }
 }

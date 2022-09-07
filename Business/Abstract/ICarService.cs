@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Concrete;
+using Core.DataAccess;
 namespace Business.Abstract
 {
-    public interface ICarService
+    public interface ICarService : IEntityServiceRepository<Car>
     {
-        public void Add(Car car);
-        public void Delete(Car car);
-        public void Update(Car car);
-        public Car GetById(int id);
-        public List<Car> GetAll();
+
     }
 }

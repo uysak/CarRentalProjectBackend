@@ -13,3 +13,5 @@ C:\Users\Neo\source\repos\CarRentalProject\DataAccess\obj\Debug\net6.0\DataAcces
 C:\Users\Neo\source\repos\CarRentalProject\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 C:\Users\Neo\source\repos\CarRentalProject\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 C:\Users\Neo\source\repos\CarRentalProject\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+C:\Users\Neo\source\repos\CarRentalProject\DataAccess\bin\Debug\net6.0\Core.dll
+C:\Users\Neo\source\repos\CarRentalProject\DataAccess\bin\Debug\net6.0\Core.pdb
