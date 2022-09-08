@@ -9,6 +9,7 @@ using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using Business.Concrete;
+using Entities.DTOs;
 
 namespace ConsoleUI
 {
@@ -20,12 +21,9 @@ namespace ConsoleUI
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             CarManager carManager = new CarManager(new EfCarDal());
 
-     //       carManager.Add( new Car{BrandId = 1, CarId = 1, DailyPrice = 700,Description = "test1"});
+            List<CarDetailDto> detailList = new List<CarDetailDto>();
 
-           // carManager.Add(new Car { BrandId = 1, CarId = 2, DailyPrice = 900,Description = "test2" });
-            //
-            Console.WriteLine(carManager.GetCarById(1).Description);
-            Console.WriteLine(brandManager.GetBrandById(2).brandName);
+            carManager.GetCarDetails();
         }
     }
 }

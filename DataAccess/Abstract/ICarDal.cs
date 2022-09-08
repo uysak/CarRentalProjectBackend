@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.DataAccess;
+using Entities.DTOs;
 
 namespace DataAccess.Abstract
 {
@@ -12,5 +13,6 @@ namespace DataAccess.Abstract
     {
         public List<Car> GetCarsByBrandId(int id);
         public List<Car> GetCarsByColorId(int id);
+        public List<CarDetailDto> GetCarDetails();
     }
 }

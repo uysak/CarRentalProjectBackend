@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using DataAccess.Abstract;
 using Business.Concrete;
 using Core.DataAccess.EntityFramework;
+using Entities.DTOs;
+
 namespace Business.Concrete
 {
     public class CarManager : EfEntityManagerRepository<Car, ICarDal>, ICarService
@@ -22,7 +24,12 @@ namespace Business.Concrete
 
         public Car GetCarById(int id)
         {
-            return _carDal.Get(c => c.CarId == id);
+            return _carDal.Get(c => c.carId == id);
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            return _carDal.GetCarDetails();
         }
     }
 }
