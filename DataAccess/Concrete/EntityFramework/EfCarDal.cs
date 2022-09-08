@@ -35,10 +35,12 @@ namespace DataAccess.Concrete.EntityFramework
             using (CarsContext context = new CarsContext())
             {
                 var result = from car in context.Cars
+
                     join brand in context.Brands on
                         car.brandId equals brand.brandId
-
-                    join color in context.Colors on car.colorId equals color.colorId
+                    join color in context.Colors on 
+                        car.colorId equals color.colorId
+                    
                     select new CarDetailDto
                     {
                         Brand = brand.brandName,
@@ -49,7 +51,6 @@ namespace DataAccess.Concrete.EntityFramework
                     };
                 Console.WriteLine(result.ToList().Count);
                 return result.ToList();
-
 
             }
         }

@@ -20,10 +20,18 @@ namespace ConsoleUI
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             CarManager carManager = new CarManager(new EfCarDal());
+            ColorManager colorManager= new ColorManager(new EfColorDal());
 
             List<CarDetailDto> detailList = new List<CarDetailDto>();
 
-            carManager.GetCarDetails();
+            detailList = carManager.GetCarDetails();
+            foreach (var car in detailList)
+            {
+                Console.WriteLine(car.Brand + " " + car.dailyPrice + " " + car.Color + " " + car.modelYear + " " + car.Description );
+            }
+            
+
+
         }
     }
 }
