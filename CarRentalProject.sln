@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entiti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{B834E062-F891-4941-8218-BD913BC4D441}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{FDC73B76-3F5B-4144-9470-EBC2B42A4571}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{FDC73B76-3F5B-4144-9470-EBC2B42A4571}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

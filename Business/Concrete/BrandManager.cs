@@ -17,6 +17,7 @@ namespace Business.Concrete
         public BrandManager(IBrandDal brandDal)
         {
             _brandDal = brandDal;
+            base._interface = _brandDal;
         }
 
         public Brand GetBrandById(int id)

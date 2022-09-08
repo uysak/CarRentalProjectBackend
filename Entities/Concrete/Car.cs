@@ -11,11 +11,11 @@ namespace Entities.Concrete
     public class Car : IEntity
     {
 
-        public int CarId { get; set; }
-        public int BrandId { get; set; }
-        public int ColorId { get; set; }
+        public short CarId { get; set; }
+        public short BrandId { get; set; }
+        public short ColorId { get; set; }
         public short ModelYear { get; set; }
-        public decimal DailyPrice { get; set; }
+        public short DailyPrice { get; set; }
         public string Description { get; set; }
 
     }

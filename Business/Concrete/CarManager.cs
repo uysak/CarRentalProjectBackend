@@ -17,6 +17,7 @@ namespace Business.Concrete
         public CarManager(ICarDal carDal)
         {
             _carDal = carDal;
+            base._interface = _carDal;
         }
 
         public Car GetCarById(int id)
