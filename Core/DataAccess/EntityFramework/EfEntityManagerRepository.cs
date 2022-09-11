@@ -6,10 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.DataAccess;
+using Core.Utilities.Results;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 
 namespace Core.DataAccess.EntityFramework
 {
-    public class EfEntityManagerRepository<TEntity,TInterface>
+    public class EfEntityManagerRepository<TEntity,TInterface> 
 
         where TEntity : class,IEntity,new()
         where TInterface : class,IEntityRepository<TEntity>
@@ -17,24 +20,26 @@ namespace Core.DataAccess.EntityFramework
 
         public TInterface _interface;
 
-        public void Add(TEntity entity)
+        public virtual IResult Add(TEntity entity)
         {
-            _interface.Add(entity);
+            _interface.Add(entity); 
+            return new SuccessResult("Ürün eklendi.");
         }
 
-        public void Delete(TEntity entity)
+        public IResult Delete(TEntity entity)
         {
             _interface.Delete(entity);
+            return new SuccessResult("Ürün silindi.");
         }
 
-        public List<TEntity> GetAll()
+        public IDataResult<List<TEntity>> GetAll()
         {
-            return _interface.GetAll();
+            return new SuccessDataResult<List<TEntity>>(_interface.GetAll());
         }
 
-        public void Update(TEntity entity)
+        public IResult Update(TEntity entity)
         {
-            _interface.Update(entity);
+            return new SuccessResult("Ürün güncellendi.");
         }
 
     }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.DataAccess.EntityFramework;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 
 namespace Business.Concrete
 {
@@ -20,9 +22,9 @@ namespace Business.Concrete
             base._interface = _brandDal;
         }
 
-        public Brand GetBrandById(int id)
+        public IDataResult<Brand> GetBrandById(int id)
         {
-           return _brandDal.Get(b => b.brandId == id);
+           return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandID == id));
         }
     }
 }

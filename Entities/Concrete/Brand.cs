@@ -1,6 +1,8 @@
 ﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +11,10 @@ namespace Entities.Concrete
 {
     public class Brand : IEntity
     {
-        public short brandId { get; set; }
-        public string brandName { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public short BrandID { get; set; }
+        public string BrandName { get; set; }
     }
 
 }

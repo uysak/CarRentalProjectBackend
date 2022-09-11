@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.DataAccess.EntityFramework;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
+
 namespace Business.Concrete
 {
     public class ColorManager : EfEntityManagerRepository<Color, IColorDal>,IColorService
@@ -20,9 +23,9 @@ namespace Business.Concrete
             base._interface = _colorDal;
         }
 
-        public Color GetColorById(int id)
+        public IDataResult<Color> GetColorById(int id)
         {
-            return base._interface.Get(c => c.colorId == id);
+            return new SuccessDataResult<Color>(base._interface.Get(c => c.ColorID == id));
         }
     }
 }

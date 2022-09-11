@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using DataAccess.Abstract;
 using Business.Concrete;
 using Core.DataAccess.EntityFramework;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 using Entities.DTOs;
 
 namespace Business.Concrete
@@ -22,14 +24,14 @@ namespace Business.Concrete
             base._interface = _carDal;
         }
 
-        public Car GetCarById(int id)
+        public IDataResult<Car> GetCarById(int id)
         {
-            return _carDal.Get(c => c.carId == id);
+            return new SuccessDataResult<Car>(_carDal.Get(c => c.CarID == id));
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public SuccessDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            return _carDal.GetCarDetails();
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
     }
 }

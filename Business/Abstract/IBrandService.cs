@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.DataAccess;
+using Core.Utilities.Results.Abstract;
+
 namespace Business.Abstract
 {
     public interface IBrandService : IEntityServiceRepository<Brand>
     {
-        public Brand GetBrandById(int id);
+        public IDataResult<Brand> GetBrandById(int id);
     }
 }

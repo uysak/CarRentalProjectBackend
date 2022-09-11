@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace Entities.DTOs
         public string Description { get; set; }
         public string Color { get; set; }
         public short dailyPrice { get; set; }
-        public short modelYear { get; set; }
+        public char modelYear { get; set; }
 
     }
 }

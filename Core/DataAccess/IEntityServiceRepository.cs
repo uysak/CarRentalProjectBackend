@@ -1,4 +1,5 @@
 ﻿using Core.Entities;
+using Core.Utilities.Results.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,10 @@ namespace Core.DataAccess
 {
     public interface IEntityServiceRepository<TEntity> where TEntity : class, IEntity, new()
     {
-        public void Add(TEntity entity);
-        public void Delete(TEntity entity);
-        public void Update(TEntity entity);
-        public List<TEntity> GetAll();
+        public IResult Add(TEntity entity);
+        public IResult Delete(TEntity entity);
+        public IResult Update(TEntity entity);
+        public IDataResult<List<TEntity>> GetAll();
+
     }
 }

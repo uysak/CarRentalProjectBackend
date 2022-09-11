@@ -15,23 +15,18 @@ namespace ConsoleUI
 {
     public class ConsoleUI
     {
-        
-        static void Main(string[] args)
+       
+        public static void Main(String[] args)
         {
-            BrandManager brandManager = new BrandManager(new EfBrandDal());
+
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
             CarManager carManager = new CarManager(new EfCarDal());
-            ColorManager colorManager= new ColorManager(new EfColorDal());
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
-            List<CarDetailDto> detailList = new List<CarDetailDto>();
-
-            detailList = carManager.GetCarDetails();
-            foreach (var car in detailList)
-            {
-                Console.WriteLine(car.Brand + " " + car.dailyPrice + " " + car.Color + " " + car.modelYear + " " + car.Description );
-            }
-            
-
+            var result = rentalManager.Rent(carManager.GetCarById(1).Data, customerManager.GetAll().Data[0]);
+            Console.WriteLine(result.Message);
 
         }
+        
     }
 }

@@ -18,7 +18,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (CarsContext context = new CarsContext())
             {
-                return context.Set<Car>().Where(c => c.brandId == id).ToList();
+                return context.Set<Car>().Where(c => c.BrandID == id).ToList();
             }
         }
 
@@ -26,7 +26,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (CarsContext context = new CarsContext())
             {
-                return context.Set<Car>().Where(c => c.colorId == id).ToList();
+                return context.Set<Car>().Where(c => c.ColorID == id).ToList();
             }
         }
 
@@ -37,17 +37,17 @@ namespace DataAccess.Concrete.EntityFramework
                 var result = from car in context.Cars
 
                     join brand in context.Brands on
-                        car.brandId equals brand.brandId
+                        car.BrandID equals brand.BrandID
                     join color in context.Colors on 
-                        car.colorId equals color.colorId
+                        car.ColorID equals color.ColorID
                     
                     select new CarDetailDto
                     {
-                        Brand = brand.brandName,
-                        Color = color.colorName,
-                        dailyPrice = car.dailyPrice,
+                        Brand = brand.BrandName,
+                        Color = color.ColorName,
+                        dailyPrice = car.DailyPrice,
                         Description = car.Description,
-                        modelYear = car.modelYear
+                        modelYear = car.ModelYear
                     };
                 Console.WriteLine(result.ToList().Count);
                 return result.ToList();
