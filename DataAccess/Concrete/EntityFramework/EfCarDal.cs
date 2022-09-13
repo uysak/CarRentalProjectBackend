@@ -54,5 +54,13 @@ namespace DataAccess.Concrete.EntityFramework
 
             }
         }
+
+        public Car GetCarById(int id)
+        {
+            using (CarsContext context = new CarsContext())
+            {
+                return context.Set<Car>().SingleOrDefault(c => c.CarID == id);
+            }
+        }
     }
 }
