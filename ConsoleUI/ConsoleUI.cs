@@ -23,7 +23,7 @@ namespace ConsoleUI
             CarManager carManager = new CarManager(new EfCarDal());
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
-            var result = rentalManager.Rent(carManager.GetCarById(1).Data, customerManager.GetAll().Data[0]);
+            var result = rentalManager.Rent(carManager.GetCarById(1).Data, customerManager.GetCustomerById(0).Data);
             Console.WriteLine(result.Message);
 
         }

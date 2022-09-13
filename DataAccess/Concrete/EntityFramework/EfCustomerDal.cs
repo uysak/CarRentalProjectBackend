@@ -10,6 +10,12 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfCustomerDal : EfEntityRepositoryBase<Customer,CarsContext>,ICustomerDal
     {
-
+        public Customer GetCustomerById(int id)
+        {
+            using (CarsContext context = new CarsContext())
+            {
+                return context.Set<Customer>().SingleOrDefault(c => c.CustomerID == id);
+            }
+        }
     }
 }
