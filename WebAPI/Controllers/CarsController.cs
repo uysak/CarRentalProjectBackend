@@ -10,6 +10,11 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CarsController : ControllerBase
     {
+        private ICarService _carService;
+        public CarsController(ICarService carService)
+        {
+            _carService = carService;
+        }
 
         [HttpGet]
         public IActionResult test()
@@ -17,20 +22,39 @@ namespace WebAPI.Controllers
             return Ok("merhaba");
         }
 
+
         [HttpGet("getcarbyid")]
         public IActionResult GetCarById(int id)
         {
-            ICarService carService = new CarManager(new EfCarDal());
 
-            var result = carService.GetCarById(id);
+            var result = _carService.GetCarById(id);
 
             if (result.Success == true)
             {
-                return Ok(carService.GetCarById(id));
+                return Ok(_carService.GetCarById(id));
             }
 
             return BadRequest(result.Message);
         }
+
+        [HttpGet("getcardetails")]
+
+        public IActionResult GetCarDetails()
+        {
+
+            var result = _carService.GetCarDetails();
+            if (result.Success == true)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest(result.Message);
+            }
+
+        }
+
+        
 
 
 

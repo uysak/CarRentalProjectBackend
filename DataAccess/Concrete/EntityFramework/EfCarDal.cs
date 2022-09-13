@@ -49,7 +49,7 @@ namespace DataAccess.Concrete.EntityFramework
                         Description = car.Description,
                         modelYear = car.ModelYear
                     };
-                Console.WriteLine(result.ToList().Count);
+               // Console.WriteLine(result.ToList().Count);
                 return result.ToList();
 
             }
