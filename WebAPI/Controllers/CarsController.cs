@@ -38,10 +38,8 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getcardetails")]
-
         public IActionResult GetCarDetails()
         {
-
             var result = _carService.GetCarDetails();
             if (result.Success == true)
             {
@@ -51,12 +49,6 @@ namespace WebAPI.Controllers
             {
                 return BadRequest(result.Message);
             }
-
         }
-
-        
-
-
-
     }
 }
