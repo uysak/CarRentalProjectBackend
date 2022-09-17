@@ -10,11 +10,13 @@ namespace Entities.DTOs
 {
     public class CarDetailDto : IDto
     {
+        public int CarId { get; set; }
         public string Brand { get; set; }
+        public string FuelType { get; set; }
         public string Description { get; set; }
         public string Color { get; set; }
-        public short dailyPrice { get; set; }
-        public char modelYear { get; set; }
+        public short DailyPrice { get; set; }
+        public short ModelYear { get; set; }
 
     }
 }

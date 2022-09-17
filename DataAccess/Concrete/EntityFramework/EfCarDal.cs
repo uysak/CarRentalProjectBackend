@@ -38,20 +38,23 @@ namespace DataAccess.Concrete.EntityFramework
 
                     join brand in context.Brands on
                         car.BrandID equals brand.BrandID
-                    join color in context.Colors on 
+                    join color in context.Colors on
                         car.ColorID equals color.ColorID
-                    
+                    join fuelType in context.FuelTypes on
+                        car.FuelID equals fuelType.FuelID
+
                     select new CarDetailDto
                     {
+                        CarId = car.CarID,
                         Brand = brand.BrandName,
                         Color = color.ColorName,
-                        dailyPrice = car.DailyPrice,
+                        DailyPrice = car.DailyPrice,
                         Description = car.Description,
-                        modelYear = car.ModelYear
+                        ModelYear = car.ModelYear,
+                        FuelType = fuelType.Fuel
                     };
                // Console.WriteLine(result.ToList().Count);
                 return result.ToList();
-
             }
         }
 

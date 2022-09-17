@@ -20,7 +20,7 @@ namespace Entities.Concrete
         public int ColorID { get; set; }
         public short DailyPrice { get; set; }
         public string Model { get; set; }
-        public char ModelYear { get; set; }
+        public short ModelYear { get; set; }
         public string Engine { get; set; }
         public int FuelID { get; set; }
         public string Description { get; set; }

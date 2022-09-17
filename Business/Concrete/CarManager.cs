@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
 using Business.Concrete;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.DataAccess.EntityFramework;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -36,6 +38,8 @@ namespace Business.Concrete
 
         public virtual IResult Add(Car car)
         {
+            ValidationTool.Validate(new CarValidator(),car);
+
             _carDal.Add(car);
             return new SuccessResult("Ürün eklendi.");
         }

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OM28XTCrNczALSyCS7hlkvbrzljjErt1g2Hmb6jcQfVnuBSXqEEI4soVNccT/L8x9OVoXk1WHHYzcZ5AFuvbhA==",
+  "dgSpecHash": "RB3Oal9+MWMaQNnsb4HslXCnWyiu/dxsQEQOIr70YXDe9UYmqh00vC0BdNMogMucQg9dcxyzZj0F2vlT9US/2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Neo\\source\\repos\\CarRentalProject\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Neo\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
+    "C:\\Users\\Neo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.2\\fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

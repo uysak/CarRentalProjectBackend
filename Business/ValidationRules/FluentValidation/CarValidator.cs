@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Entities.Concrete;
 using FluentValidation;
 
-namespace Business.Validation
+namespace Business.ValidationRules.FluentValidation
 {
     public class CarValidator : AbstractValidator<Car>
     {
@@ -19,16 +19,18 @@ namespace Business.Validation
             RuleFor(c => c.ColorID).NotEmpty();
             RuleFor(c => c.ColorID).GreaterThan(0);
 
-            
+
             RuleFor(c => c.DailyPrice).NotEmpty();
             RuleFor(c => c.DailyPrice).GreaterThan((short)0);
 
-            RuleFor(c=>c.Engine).NotEmpty();
+            RuleFor(c => c.Engine).NotEmpty();
 
             RuleFor(c => c.FuelID).NotEmpty();
             RuleFor(c => c.FuelID).GreaterThan(0);
 
             RuleFor(c => c.Model).NotEmpty();
+
+            RuleFor(c => c.Description).MinimumLength(10);
         }
 
     }

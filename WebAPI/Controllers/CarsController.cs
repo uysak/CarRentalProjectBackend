@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -49,6 +50,19 @@ namespace WebAPI.Controllers
             {
                 return BadRequest(result.Message);
             }
+        }
+
+        [HttpPost("addcar")]
+        public IActionResult AddCar(Car car)
+        {
+            var result = _carService.Add(car);
+
+            if (result.Success == true)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result.Message);
         }
     }
 }
