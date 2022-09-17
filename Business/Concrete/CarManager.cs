@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using DataAccess.Abstract;
 using Business.Concrete;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.DataAccess.EntityFramework;
 using Core.Utilities.Results.Abstract;
@@ -36,10 +37,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public virtual IResult Add(Car car)
         {
-            ValidationTool.Validate(new CarValidator(),car);
-
             _carDal.Add(car);
             return new SuccessResult("Ürün eklendi.");
         }

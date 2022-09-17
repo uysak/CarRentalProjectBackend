@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "LRgz9PIIzQQqtmd0GvmJvJT68SygCcjLtSo4S717gG0+8DNyhkIneGpqOeC65jNrovaKUA4ICDFildCNFyMLQQ==",
+  "dgSpecHash": "D8QkepGmQXLeSMbXoU+j/f7EZcS6V5cJMzw8+Z4T2mPkDd3GW0oO+PI4OoeB59gH6dbBTg19Q5R7lyUsbOmc1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Neo\\source\\repos\\CarRentalProject\\ConsoleUI\\ConsoleUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Neo\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
+    "C:\\Users\\Neo\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
