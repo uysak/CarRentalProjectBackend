@@ -19,12 +19,14 @@ namespace ConsoleUI
         public static void Main(String[] args)
         {
 
-            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            RentalManager rentalManager = new RentalManager(new EfRentalDal(),new EfCarDal());
             CarManager carManager = new CarManager(new EfCarDal());
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
-            var result = rentalManager.Rent(carManager.GetCarById(1).Data, customerManager.GetCustomerById(0).Data);
+            var result = rentalManager.Rent(carManager.GetCarById(2).Data, customerManager.GetCustomerById(0).Data);
             Console.WriteLine(result.Message);
+
+            var car = carManager.GetCarById(2);
 
         }
         

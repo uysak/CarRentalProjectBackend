@@ -10,22 +10,28 @@ using System.Threading.Tasks;
 using Core.DataAccess.EntityFramework;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
+using Core.Entities;
 
 namespace Business.Concrete
 {
-    public class ColorManager : EfEntityManagerRepository<Color, IColorDal>,IColorService
+    public class ColorManager : IColorService
     {
         IColorDal _colorDal;
 
         public ColorManager(IColorDal colorDal)
         {
             _colorDal = colorDal;
-            base._interface = _colorDal;
         }
 
         public IDataResult<Color> GetColorById(int id)
         {
-            return new SuccessDataResult<Color>(base._interface.Get(c => c.ColorID == id));
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorID == id));
+        }
+
+        public IDataResult<List<Color>> GetAll()
+        {
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll());
         }
     }
+
 }

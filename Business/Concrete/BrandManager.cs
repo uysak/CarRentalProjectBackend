@@ -9,22 +9,27 @@ using System.Threading.Tasks;
 using Core.DataAccess.EntityFramework;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
+using Core.Entities;
 
 namespace Business.Concrete
 {
-    public class BrandManager : EfEntityManagerRepository<Brand, IBrandDal>, IBrandService
+    public class BrandManager : IBrandService
     {
         IBrandDal _brandDal;
 
         public BrandManager(IBrandDal brandDal)
         {
             _brandDal = brandDal;
-            base._interface = _brandDal;
         }
 
         public IDataResult<Brand> GetBrandById(int id)
         {
-           return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandID == id));
+            return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandID == id));
+        }
+
+        public IDataResult<List<Brand>> GetAll()
+        {
+            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
         }
     }
 }

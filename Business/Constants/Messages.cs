@@ -9,5 +9,6 @@ namespace Business.Constants
     public static class Messages
     {
         public static string ErrorUnavailableCar = "Seçilen araba müsait değil";
+        public static string CarReturned = "Araba başarıyla geri alındı.";
     }
 }

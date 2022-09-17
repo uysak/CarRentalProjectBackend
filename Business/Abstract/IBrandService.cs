@@ -9,8 +9,9 @@ using Core.Utilities.Results.Abstract;
 
 namespace Business.Abstract
 {
-    public interface IBrandService : IEntityServiceRepository<Brand>
+    public interface IBrandService
     {
         public IDataResult<Brand> GetBrandById(int id);
+        public IDataResult <List<Brand>> GetAll();
     }
 }

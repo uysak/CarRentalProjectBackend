@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "PwDbAmEgiKy34FkXGWz3x1UNyjQWdBjJ0/2aSytQfl7laNHBw8wGy9OH4rPLRwloPU4SugTnSpqeSgfyAjg6lA==",
+  "dgSpecHash": "h2c1tb2R+C5U7WKJzZWm5043R9aS2OyyEfmGcn0KLQeLRv4Dsvuk+/WXXE1KSc8hzioYJK3zkXb/mDBYct/eBg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Neo\\source\\repos\\CarRentalProject\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Neo\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\Neo\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

@@ -9,8 +9,9 @@ using Core.Utilities.Results.Abstract;
 
 namespace Business.Abstract
 {
-    public interface IColorService : IEntityServiceRepository<Color>
+    public interface IColorService
     {
         public IDataResult<Color> GetColorById(int id);
+        public IDataResult<List<Color>> GetAll();
     }
 }
