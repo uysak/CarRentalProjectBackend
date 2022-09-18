@@ -14,20 +14,13 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfRentalDal : EfEntityRepositoryBase<Rental,CarsContext>,IRentalDal
     {
-        public void Rent(Car car, Customer customer)
+        public void Rent(Rental rental)
         {
-            var rental = new Rental();
-
-            rental.CarID = car.CarID;
-            rental.CustomerID = customer.CustomerID;
-            rental.RentDate = DateTime.Now;
-            rental.ReturnDate = DateTime.Today;
-
             base.Add(rental);
 
             using (CarsContext context = new CarsContext())
             {
-                context.Set<Car>().SingleOrDefault(c => c.CarID == car.CarID).isAvailable = false;
+                context.Set<Car>().SingleOrDefault(c => c.CarID == rental.CarID).isAvailable = false;
                 context.SaveChanges();
             }
 

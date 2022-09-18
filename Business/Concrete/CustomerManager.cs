@@ -31,13 +31,13 @@ namespace Business.Concrete
         public virtual IResult Add(Customer customer)
         {
             _customerDal.Add(customer);
-            return new SuccessResult("Ürün eklendi.");
+            return new SuccessResult("Müşteri eklendi.");
         }
 
         public IResult Delete(Customer customer)
         {
             _customerDal.Delete(customer);
-            return new SuccessResult("Ürün silindi.");
+            return new SuccessResult("Müşteri silindi.");
         }
 
         public IDataResult<List<Customer>> GetAll()
@@ -48,11 +48,7 @@ namespace Business.Concrete
         public IResult Update(Customer customer)
         {
             _customerDal.Update(customer);
-            return new SuccessResult("Ürün güncellendi.");
+            return new SuccessResult("Müşteri güncellendi.");
         }
-
-
-
-
     }
 }

@@ -66,3 +66,5 @@ C:\Users\Neo\source\repos\CarRentalProject\ConsoleUI\bin\Debug\net6.0\Autofac.dl
 C:\Users\Neo\source\repos\CarRentalProject\ConsoleUI\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
 C:\Users\Neo\source\repos\CarRentalProject\ConsoleUI\bin\Debug\net6.0\Castle.Core.dll
 C:\Users\Neo\source\repos\CarRentalProject\ConsoleUI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Neo\source\repos\CarRentalProject\ConsoleUI\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\Neo\source\repos\CarRentalProject\ConsoleUI\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

@@ -41,13 +41,13 @@ namespace Business.Concrete
         public virtual IResult Add(Car car)
         {
             _carDal.Add(car);
-            return new SuccessResult("Ürün eklendi.");
+            return new SuccessResult("Araba eklendi.");
         }
 
         public IResult Delete(Car car)
         {
             _carDal.Delete(car);
-            return new SuccessResult("Ürün silindi.");
+            return new SuccessResult("Araba silindi.");
         }
 
         public IDataResult<List<Car>> GetAll()
@@ -58,7 +58,7 @@ namespace Business.Concrete
         public IResult Update(Car car)
         {
             _carDal.Update(car);
-            return new SuccessResult("Ürün güncellendi.");
+            return new SuccessResult("Araba güncellendi.");
         }
 
     }

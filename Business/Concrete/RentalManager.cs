@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.DataAccess.EntityFramework;
 using Core.Entities;
 using Core.Utilities.Results.Abstract;
@@ -18,23 +20,26 @@ namespace Business.Concrete
     public class RentalManager : IRentalService
     {
         private IRentalDal _rentalDal;
-        private ICarDal _carDal;
+        private ICarService _carService;
+        private IUserService _userService;
 
-        public RentalManager(IRentalDal rentalDal, ICarDal carDal)
+        public RentalManager(IRentalDal rentalDal, ICarService carService, IUserService userService)
         {
             _rentalDal = rentalDal;
-            _carDal = carDal;
+            _carService = carService;
+            _userService = userService;
 
         }
 
 
-
-        public IResult Rent(Car car, Customer customer)
+        [ValidationAspect(typeof(RentalValidator))]
+        public IResult Rent(Rental rental)
         {
-            if (car.isAvailable == true)
+            var rentedCar = _carService.GetCarById(rental.CarID).Data;
+            if (rentedCar.isAvailable == true)
             {
-                _rentalDal.Rent(car,customer);
-                return new SuccessResult();
+                _rentalDal.Rent(rental);
+                return new SuccessResult("Araç Kiralandı");
             }
             else
             {
@@ -45,7 +50,7 @@ namespace Business.Concrete
         public IResult Delete(Rental rental)
         {
             _rentalDal.Delete(rental);
-            return new SuccessResult("Ürün silindi.");
+            return new SuccessResult("Kayıt silindi.");
         }
 
         public IDataResult<List<Rental>> GetAll()
@@ -56,16 +61,29 @@ namespace Business.Concrete
         public IResult Update(Rental rental)
         {
             _rentalDal.Update(rental);
-            return new SuccessResult("Ürün güncellendi.");
+            return new SuccessResult("Kayıt güncellendi.");
         }
 
         public IResult ReturnCar(Rental rental)
         {
-            var returnedCar = _carDal.GetCarById(rental.CarID);
+            var returnedCar = _carService.GetCarById(rental.CarID).Data;
             returnedCar.isAvailable = true;
-            _carDal.Update(returnedCar);
+            _carService.Update(returnedCar);
             rental.ReturnDate = DateTime.Now;
+            _rentalDal.Update(rental);
             return new SuccessResult(Messages.CarReturned);
         }
+
+        public IResult CheckIfUserAlreadyHasRentedCar(int userId)
+        {
+            var result = _rentalDal.GetAll(u =>u.UserID == userId ).Any();
+            if (result)
+            {
+                return new ErrorResult(Messages.UserAlreadyExists);
+            }
+
+            return new SuccessResult();
+        }
+
     }
 }

@@ -27,6 +27,18 @@
           }
         }
       },
+      "Autofac.Extensions.DependencyInjection/8.0.0": {
+        "dependencies": {
+          "Autofac": "6.4.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
+        }
+      },
       "Autofac.Extras.DynamicProxy/6.0.1": {
         "dependencies": {
           "Autofac": "6.4.0",
@@ -62,6 +74,18 @@
       "FluentValidation/11.2.2": {
         "runtime": {
           "lib/net6.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.2.2.0"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.2.2": {
+        "dependencies": {
+          "FluentValidation": "11.2.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.2.2.0"
           }
@@ -1261,6 +1285,11 @@
       },
       "Core/1.0.0": {
         "dependencies": {
+          "Autofac": "6.4.0",
+          "Autofac.Extensions.DependencyInjection": "8.0.0",
+          "Autofac.Extras.DynamicProxy": "6.0.1",
+          "FluentValidation": "11.2.2",
+          "FluentValidation.DependencyInjectionExtensions": "11.2.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8"
         },
         "runtime": {
@@ -1300,6 +1329,13 @@
       "path": "autofac/6.4.0",
       "hashPath": "autofac.6.4.0.nupkg.sha512"
     },
+    "Autofac.Extensions.DependencyInjection/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nGrXNpQX2FiZpIBydK9cxZnnoqP/cUd3k/53uRERYEqLtWzKtE15R6L+j5q5ax5Rv/+3wAIkOaPePkahfqrwjg==",
+      "path": "autofac.extensions.dependencyinjection/8.0.0",
+      "hashPath": "autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512"
+    },
     "Autofac.Extras.DynamicProxy/6.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1320,6 +1356,13 @@
       "sha512": "sha512-5QEte2BUZZF6Sezeekr7Zu1THfgpxU7pmuL2SjIrajuGMah+pxPGiRiLtw+x/tSUSSVmcv9LrUe41lKu4l0n4A==",
       "path": "fluentvalidation/11.2.2",
       "hashPath": "fluentvalidation.11.2.2.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4JFJec9ILLax7vrVN7S6mVzlvc2Lwqu0lN3yl0LUoNVsJ8m1QB/twif/DX05EG+pYD83SWJ07wQ65WePGu2iGg==",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.2.2",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",
