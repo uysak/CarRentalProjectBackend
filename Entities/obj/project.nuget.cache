@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UML+FIGQ5/ckzLfXjkJLHtCZ8GHn1dbUDAxHAkSY7Tddojk0RJdp3LTUv7t/kUa0UCu/z9+0hw5+QjcHx2M/Fw==",
+  "dgSpecHash": "pqqxBVU+Y2oF4giriGcvlNZklL2zzdfq2sEI5KtfPff3QSFQb/MlJSU/19bI8iA0kOJYNsH09Jtk5zv1sZLTJQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Neo\\source\\repos\\CarRentalProject\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Neo\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.2\\fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
+    "C:\\Users\\Neo\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Neo\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

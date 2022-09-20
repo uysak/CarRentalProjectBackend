@@ -28,6 +28,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<RentalManager>().As<IRentalService>().SingleInstance();
             builder.RegisterType<EfRentalDal>().As<IRentalDal>();
 
+            builder.RegisterType<ImageManager>().As<IImageService>().SingleInstance();
+            builder.RegisterType<EfImageDal>().As<IImageDal>();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

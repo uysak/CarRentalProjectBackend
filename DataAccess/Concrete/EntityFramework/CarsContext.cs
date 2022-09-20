@@ -23,5 +23,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<FuelType> FuelTypes { get; set; }
         public DbSet<Rental> Rentals { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Image> CarImages { get; set; }
     }
 }

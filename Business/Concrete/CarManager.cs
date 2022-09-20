@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
 using Business.Concrete;
+using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
@@ -15,6 +16,7 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using Entities.DTOs;
 using Core.Entities;
+using Core.Utilities.Business;
 
 namespace Business.Concrete
 {
@@ -22,14 +24,17 @@ namespace Business.Concrete
     {
 
         ICarDal _carDal;
-        public CarManager(ICarDal carDal)
+        private IImageService _imageService;
+        public CarManager(ICarDal carDal,IImageService imageService)
         {
             _carDal = carDal;
+            _imageService = imageService;
         }
 
-        public IDataResult<Car> GetCarById(int id)
+        public IDataResult<Car> GetCarById(int carId)
         {
-            return new SuccessDataResult<Car>(_carDal.GetCarById(id));
+            BusinessRules.Run(CheckIfCarExist(carId));
+            return new SuccessDataResult<Car>(_carDal.GetCarById(carId));
         }
 
         public SuccessDataResult<List<CarDetailDto>> GetCarDetails()
@@ -57,8 +62,20 @@ namespace Business.Concrete
 
         public IResult Update(Car car)
         {
+            BusinessRules.Run(CheckIfCarExist(car.CarID));
             _carDal.Update(car);
             return new SuccessResult("Araba güncellendi.");
+        }
+
+        public IResult CheckIfCarExist(int carId)
+        {
+            var result = _carDal.GetAll(c => c.CarID == carId).Any();
+            if (result)
+            {
+                return new SuccessResult();
+            }
+
+            return new ErrorResult(Messages.CarIsNotExist);
         }
 
     }

@@ -15,20 +15,20 @@ namespace ConsoleUI
 {
     public class ConsoleUI
     {
-       
+
         public static void Main(String[] args)
         {
 
-            RentalManager rentalManager = new RentalManager(new EfRentalDal(),new EfCarDal());
-            CarManager carManager = new CarManager(new EfCarDal());
-            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            //RentalManager rentalManager = new RentalManager(new EfRentalDal(), new EfCarDal());
+            //CarManager carManager = new CarManager(new EfCarDal());
+            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
-            var result = rentalManager.Rent(carManager.GetCarById(2).Data, customerManager.GetCustomerById(0).Data);
-            Console.WriteLine(result.Message);
+            //var result = rentalManager.Rent(carManager.GetCarById(2).Data, customerManager.GetCustomerById(0).Data);
+            //Console.WriteLine(result.Message);
 
-            var car = carManager.GetCarById(2);
+            //var car = carManager.GetCarById(2);
 
         }
-        
+
     }
 }
